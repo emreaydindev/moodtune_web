@@ -1,1 +1,2 @@
-This project is the Web Frontend of MoodTune.
+This project is the Web Frontend of *MoodTune*.
+
