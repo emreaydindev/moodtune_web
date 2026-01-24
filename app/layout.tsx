@@ -2,6 +2,7 @@ import type { Metadata } from "next";
 import "./globals.css";
 import ThemeRegistry from "@/components/ThemeRegistery";
 import Navbar from "@/components/Navbar";
+import Footer from "@/components/Footer";
 
 export const metadata: Metadata = {
   title: "Home | MoodTune",
@@ -21,7 +22,7 @@ export default function RootLayout({
           <main>
             {children}
           </main>
-          <footer></footer>
+          <Footer />
         </ThemeRegistry>
       </body>
     </html>
