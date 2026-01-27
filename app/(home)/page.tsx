@@ -22,15 +22,6 @@ const light_posters = [
   "https://image.tmdb.org/t/p/original/3Rfvhy1Nl6sSGJwyjb0QiZzZYlB.jpg"
 ]
 
-const fadeAnimation = {
-  '@keyframes fadeInOut': {
-    '0%': { opacity: 0.3 },
-    '10%': { opacity: 1 },
-    '90%': { opacity: 1 },
-    '100%': { opacity: 0.3 },
-  },
-};
-
 export default function Home() {
 
   const [mounted, setMounted] = useState(false);

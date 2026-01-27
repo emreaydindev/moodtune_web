@@ -1,12 +1,13 @@
 'use client';
-import { AppBar, Toolbar, Typography, Button, Box, Container, IconButton, Drawer, List, ListItem, ListItemButton, ListItemText, Divider, ListItemIcon, useTheme } from '@mui/material';
-import Image from 'next/image';
+import '../app/globals.css';
+import { AppBar, Toolbar, Button, Box, Container, IconButton, Drawer, List, ListItem, ListItemButton, ListItemText, Divider, ListItemIcon, useTheme } from '@mui/material';
 import Link from 'next/link';
 import MenuIcon from '@mui/icons-material/Menu';
 import React from 'react';
 import { Info, Money, Star, WbSunny, DarkMode } from '@mui/icons-material';
 import ThemeSwitcher from './ThemeSwitcher';
 import { useColorMode } from '@/context/ThemeContext'; // Context yolunu kontrol et
+import Logo from './Logo';
 
 const Navbar = () => {
   const [drawerOpen, setDrawerOpen] = React.useState(false);
@@ -43,14 +44,14 @@ const Navbar = () => {
           <List>
             {['Features', 'Pricing', 'Contact'].map((text, index) => (
               <ListItem key={text} disablePadding>
-                <ListItemButton 
-                  component={Link} 
-                  href={(index === 0) ? `#${text.toLowerCase()}` : `/${text.toLowerCase()}`} 
+                <ListItemButton
+                  component={Link}
+                  href={(index === 0) ? `#${text.toLowerCase()}` : `/${text.toLowerCase()}`}
                   onClick={toggleDrawer(false)}
                   sx={{ borderRadius: "12px", mb: 0.5 }}
                 >
                   <ListItemIcon sx={{ minWidth: 40 }}>
-                    { (index === 0) ? <Star /> : (index === 1) ? <Money /> : <Info /> }
+                    {(index === 0) ? <Star /> : (index === 1) ? <Money /> : <Info />}
                   </ListItemIcon>
                   <ListItemText
                     primary={text}
@@ -65,13 +66,13 @@ const Navbar = () => {
             <Divider sx={{ my: 1, opacity: 0.5 }} />
 
             <ListItem disablePadding>
-              <ListItemButton 
+              <ListItemButton
                 onClick={() => {
                   toggleColorMode();
                 }}
-                sx={{ 
-                  borderRadius: "12px", 
-                  bgcolor: theme.palette.mode === 'dark' ? 'rgba(255,255,255,0.05)' : 'rgba(0,0,0,0.03)' 
+                sx={{
+                  borderRadius: "12px",
+                  bgcolor: theme.palette.mode === 'dark' ? 'rgba(255,255,255,0.05)' : 'rgba(0,0,0,0.03)'
                 }}
               >
                 <ListItemIcon sx={{ minWidth: 40 }}>
@@ -119,23 +120,7 @@ const Navbar = () => {
         <Container maxWidth="lg">
           <Toolbar sx={{ justifyContent: 'space-between', px: { xs: 0 } }}>
 
-            <Box sx={{ display: 'flex', alignItems: 'center', gap: 1.5 }}>
-              <Image src="/logo_gradient.svg" alt="MoodTune Logo" width={40} height={40} />
-              <Typography
-                variant="h6"
-                sx={{
-                  fontFamily: 'Sora, sans-serif',
-                  fontWeight: 800,
-                  color: 'text.primary',
-                  textDecoration: 'none',
-                  letterSpacing: '-0.5px'
-                }}
-                component={Link}
-                href="/"
-              >
-                MoodTune
-              </Typography>
-            </Box>
+            <Logo />
 
             <Box sx={{ display: { xs: 'none', md: 'flex' }, gap: 3, ml: 4, flexGrow: 1 }}>
               <Button component={Link} href="#features" color="inherit" sx={{ textTransform: 'none', fontWeight: 700 }}>
