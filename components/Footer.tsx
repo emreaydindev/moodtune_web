@@ -9,11 +9,7 @@ const footerData = [
       {
         title: "How it works",
         link: "#howitworks"
-      }, 
-      {
-        title: "Pricing",
-        link: "/pricing"
-      }, 
+      },
       {
         title: "Features",
         link: "#features"

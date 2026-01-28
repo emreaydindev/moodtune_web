@@ -6,13 +6,13 @@ import MenuIcon from '@mui/icons-material/Menu';
 import React from 'react';
 import { Info, Money, Star, WbSunny, DarkMode } from '@mui/icons-material';
 import ThemeSwitcher from './ThemeSwitcher';
-import { useColorMode } from '@/context/ThemeContext'; // Context yolunu kontrol et
+import { useColorMode } from '@/context/ThemeContext';
 import Logo from './Logo';
 
 const Navbar = () => {
   const [drawerOpen, setDrawerOpen] = React.useState(false);
   const theme = useTheme();
-  const { toggleColorMode } = useColorMode(); // Tema değiştirme fonksiyonu
+  const { toggleColorMode } = useColorMode(); 
 
   const toggleDrawer = (newOpen: boolean) => (event: React.KeyboardEvent | React.MouseEvent) => {
     if (
@@ -42,7 +42,7 @@ const Navbar = () => {
         <Box sx={{ width: 280, display: 'flex', flexDirection: 'column', height: '100%', p: 3 }}>
 
           <List>
-            {['Features', 'Pricing', 'Contact'].map((text, index) => (
+            {['Features', 'Contact'].map((text, index) => (
               <ListItem key={text} disablePadding>
                 <ListItemButton
                   component={Link}
@@ -51,7 +51,7 @@ const Navbar = () => {
                   sx={{ borderRadius: "12px", mb: 0.5 }}
                 >
                   <ListItemIcon sx={{ minWidth: 40 }}>
-                    {(index === 0) ? <Star /> : (index === 1) ? <Money /> : <Info />}
+                    {(index === 0) ? <Star /> : <Info />}
                   </ListItemIcon>
                   <ListItemText
                     primary={text}
@@ -125,9 +125,6 @@ const Navbar = () => {
             <Box sx={{ display: { xs: 'none', md: 'flex' }, gap: 3, ml: 4, flexGrow: 1 }}>
               <Button component={Link} href="#features" color="inherit" sx={{ textTransform: 'none', fontWeight: 700 }}>
                 Features
-              </Button>
-              <Button component={Link} href="/pricing" color="inherit" sx={{ textTransform: 'none', fontWeight: 700 }}>
-                Pricing
               </Button>
               <Button component={Link} href="/contact" color="inherit" sx={{ textTransform: 'none', fontWeight: 700 }}>
                 Contact

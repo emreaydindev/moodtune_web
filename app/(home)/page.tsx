@@ -177,7 +177,7 @@ export default function Home() {
             borderRadius: 8,
             p: { xs: 6, md: 10 },
             textAlign: 'center',
-            color: 'primary.contrastText',
+            color: 'primary.on',
             boxShadow: '0 20px 40px rgba(34, 140, 219, 0.3)',
             m: { xs: 3 }
           }}>
