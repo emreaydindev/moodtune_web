@@ -64,6 +64,8 @@ export default function ForgetPasswordPage() {
                         name="email"
                         type="email"
                         label="Email"
+                        value=""
+                        setValue={() => {}}
                     />
 
                     <Button

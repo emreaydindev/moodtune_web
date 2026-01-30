@@ -56,10 +56,14 @@ export default function LoginPage() {
             name="email"
             type="email"
             label="Email"
+            value=""
+            setValue={() => {}}
           />
 
           <SigningPasswordInput
             theme={theme}
+            value=""
+            setValue={() => {}}
           />
 
           <Button

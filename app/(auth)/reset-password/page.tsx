@@ -64,12 +64,16 @@ export default function ResetPasswordPage() {
                         theme={theme}
                         name="password"
                         label="New Password"
+                        value=""
+                        setValue={() => {}}
                     />
 
                     <SigningPasswordInput
                         theme={theme}
                         name="confirmPassword"
                         label="Confirm New Password"
+                        value=""
+                        setValue={() => {}}
                     />
 
                     <Button
