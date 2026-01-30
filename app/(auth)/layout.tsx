@@ -22,8 +22,10 @@ export default function RootLayout({
         <ThemeRegistry>
           <AuthStack>
             <AuthContainer>
-              <Logo />
-              <div className="h-4" />
+              <div id="logo-container">
+                <Logo />
+                <div className="h-4" />
+              </div>
               {children}
             </AuthContainer>
           </AuthStack>

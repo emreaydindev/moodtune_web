@@ -7,18 +7,16 @@ export const AuthStack = styled(Stack)(({ theme }) => {
   const lightGradient = `radial-gradient(circle at center, #FFFFFF 0%, #F8F9FF 70%, #F0F4F8 100%)`;
 
   return {
-    height: "100vh",
-    width: "100vw",
+    minHeight: "100vh",
+    width: "100%",
     alignItems: "center",
     justifyContent: "center",
     background: isDark ? darkGradient : lightGradient,
-    overflow: "hidden",
+    padding: theme.spacing(2),
+    
     [theme.breakpoints.down('sm')]: {
-      height: "auto",
-      minHeight: "100vh",
-      padding: "24px 0",
-      justifyContent: "flex-start",
-      pt: 4,
+      padding: theme.spacing(2),
+      justifyContent: "center",
     },
   };
 });

@@ -10,11 +10,15 @@ export function SigningInput({
     name,
     type,
     label,
+    value,
+    setValue
 }: {
     theme: Theme,
     name: string,
     type: string,
     label: string,
+    value: string,
+    setValue: (val: string) => void
 }) {
     return (
         <TextField
@@ -22,6 +26,7 @@ export function SigningInput({
             name={name}
             type={type}
             label={label}
+            value={value}
             variant="outlined"
             required
             slotProps={{
@@ -42,6 +47,9 @@ export function SigningInput({
                     },
                 }
             }}
+            onChange={(event: React.ChangeEvent<HTMLInputElement>) => {
+                setValue(event.target.value);
+            }}
         />
     );
 }
@@ -50,10 +58,14 @@ export function SigningPasswordInput({
     theme,
     name = "password",
     label = "Password",
+    value,
+    setValue
 }: {
     theme: Theme,
     name?: string,
     label?: string,
+    value: string,
+    setValue: (val: string) => void
 }) {
 
     const [showPassword, setShowPassword] = React.useState(false);
@@ -64,6 +76,7 @@ export function SigningPasswordInput({
             name={name}
             type={showPassword ? "text" : "password"}
             label={label}
+            value={value}
             required
             slotProps={{
               inputLabel: {
@@ -87,6 +100,9 @@ export function SigningPasswordInput({
                   },
                 },
               },
+            }}
+            onChange={(event: React.ChangeEvent<HTMLInputElement>) => {
+                setValue(event.target.value);
             }}
           />
     );
