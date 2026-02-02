@@ -5,8 +5,10 @@ import Navbar from "@/components/Navbar";
 import Footer from "@/components/Footer";
 
 export const metadata: Metadata = {
-  title: "Home - MoodTune",
-  description: "Home page of MoodTune",
+  title: {
+    template: "%s | MoodTune",
+    default: "Home | MoodTune",
+  },
 };
 
 export default function RootLayout({

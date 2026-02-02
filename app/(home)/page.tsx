@@ -1,28 +1,13 @@
 "use client";
-import { Box, Button, Container, Typography, Card, CardContent, Avatar, Divider, Stack, Grid, useTheme, useMediaQuery } from "@mui/material";
+import { Box, Button, Container, Typography, Card, CardContent, Divider, Stack, Grid, useTheme, useMediaQuery } from "@mui/material";
 import Link from "next/link";
 import CloudIcon from '@mui/icons-material/Cloud';
 import SentimentSatisfiedAltIcon from '@mui/icons-material/SentimentSatisfiedAlt';
 import SettingsSuggestIcon from '@mui/icons-material/SettingsSuggest';
 import { useEffect, useState } from "react";
+import { STATIC_DARK_POSTERS, STATIC_LIGHT_POSTERS } from "@/common/static_poster_data";
 
-const dark_posters = [
-  "https://image.tmdb.org/t/p/original/wxxSyWPPgssnkO6FbCAVyntLLSr.jpg",
-  "https://image.tmdb.org/t/p/original/b0PlSFdDwbyK0cf5RxwDpaOJQvQ.jpg",
-  "https://image.tmdb.org/t/p/original/zZqpAXxVSBtxV9qPBcscfXBcL2w.jpg",
-  "https://image.tmdb.org/t/p/original/8rvLEmdI4gLrMO1rLqbNdnNcPFE.jpg",
-  "https://image.tmdb.org/t/p/original/bPLRjO2pcBx0WL73WUPzuNzQ3YN.jpg",
-]
-
-const light_posters = [
-  "https://image.tmdb.org/t/p/original/fK5ssgvtI43z19FoWigdlqgpLRE.jpg",
-  "https://image.tmdb.org/t/p/original/tsRy63Mu5cu8etL1X7ZLyf7UP1M.jpg",
-  "https://image.tmdb.org/t/p/original/67HggiWaP9ZLv5sPYmyRV37yAJM.jpg",
-  "https://image.tmdb.org/t/p/original/5TiwfWEaPSwD20uwXjCTUqpQX70.jpg",
-  "https://image.tmdb.org/t/p/original/3Rfvhy1Nl6sSGJwyjb0QiZzZYlB.jpg"
-]
-
-export default function Home() {
+export default function Page() {
 
   const [mounted, setMounted] = useState(false);
 
@@ -37,7 +22,7 @@ export default function Home() {
 
   const isDarkMode = theme.palette.mode === 'dark';
 
-  const posters = isDarkMode ? dark_posters : light_posters;
+  const posters = isDarkMode ? STATIC_DARK_POSTERS : STATIC_LIGHT_POSTERS;
   const [currentIndex, setCurrentIndex] = useState(0);
 
   useEffect(() => {

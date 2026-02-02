@@ -3,7 +3,15 @@ import ThemeRegistry from "@/components/ThemeRegistery";
 import { AuthStack } from "./components/AuthStack";
 import { AuthContainer } from "./components/AuthContainer";
 import Logo from "@/components/Logo";
-import { Dancing_Script, Great_Vibes } from "next/font/google";
+import { Dancing_Script } from "next/font/google";
+import { Metadata } from "next";
+
+export const metadata: Metadata = {
+  title: {
+    template: "%s | MoodTune",
+    default: "Auth | MoodTune",
+  },
+};
 
 const dancingScript = Dancing_Script({
   subsets: ["latin"],

@@ -1,10 +1,13 @@
-import Content from "./content";
 import { Metadata } from "next";
 
 export const metadata: Metadata = {
-    title: "Register"
+    title: "Browse"
 }
 
 export default function Page() {
-    return <Content />;
+    return <>
+    <h1>
+        Browse
+    </h1>
+    </>;
 }
