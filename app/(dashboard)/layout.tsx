@@ -1,6 +1,7 @@
 import type { Metadata } from "next";
 import "../globals.css";
 import ThemeRegistry from "@/components/ThemeRegistery";
+import Navigation from "./components/Navigation";
 
 export const metadata: Metadata = {
   title: {
@@ -14,18 +15,16 @@ export default function RootLayout({
 }: Readonly<{
   children: React.ReactNode;
 }>) {
+
   return (
     <html lang="en" className="h-full"> 
       <body className="min-h-screen antialiased">
         <ThemeRegistry>
-          <div className="flex flex-row h-screen w-full overflow-hidden">
-            
-            <div className="bg-green-500 w-66 shrink-0 p-2">
-              Sidebar
-            </div>
+          <div className="flex flex-col-reverse sm:flex-row h-screen w-full overflow-hidden">            
+            <Navigation />
 
-            <div className="flex flex-col flex-1 min-w-0">
-              <div className="bg-red-500 h-17 w-full shrink-0 p-2">
+            <div className="flex flex-col flex-1 min-w-0 h-full">
+              <div className="bg-red-500 h-16 w-full shrink-0 p-2">
                 Header
               </div>
               

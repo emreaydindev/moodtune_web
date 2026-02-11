@@ -6,12 +6,18 @@ declare module '@mui/material/styles' {
     surfaceContainerLow: string;
     surfaceContainerHigh: string;
     surfaceContainerHighest: string;
+    selectedHover: string;
+    danger: string;
+    onHoverDanger: string;
   }
   interface PaletteOptions {
     surfaceContainer?: string;
     surfaceContainerLow?: string;
     surfaceContainerHigh?: string;
     surfaceContainerHighest?: string;
+    selectedHover: string;
+    danger: string;
+    onHoverDanger: string;
   }
   interface PaletteColor {
     container?: string;
@@ -36,7 +42,10 @@ export const getCustomTheme = (mode: 'light' | 'dark') => {
     surfaceContainerLow: '#F2F3F9',
     surfaceContainer: '#f6f8fd',
     surfaceContainerHigh: '#E6E8EE',
-    surfaceContainerHighest: '#E0E2E8'
+    surfaceContainerHighest: '#E0E2E8',
+    selectedHover: '#b1d0f9',
+    danger: '#fb5555',
+    onHoverDanger: '#f9d9d9'
   } : {
     // Dark Scheme
     primary: '#9ECAFC',
@@ -50,6 +59,9 @@ export const getCustomTheme = (mode: 'light' | 'dark') => {
     surfaceContainer: '#11161b',
     surfaceContainerHigh: '#272A2F',
     surfaceContainerHighest: '#32353A',
+    selectedHover: '#003256',
+    danger: '#FF5252',
+    onHoverDanger: '#561010'
   };
 
   return createTheme({
@@ -74,6 +86,9 @@ export const getCustomTheme = (mode: 'light' | 'dark') => {
       surfaceContainer: colors.surfaceContainer,
       surfaceContainerHigh: colors.surfaceContainerHigh,
       surfaceContainerHighest: colors.surfaceContainerHighest,
+      selectedHover: colors.selectedHover,
+      danger: colors.danger,
+      onHoverDanger: colors.onHoverDanger
     },
     shape: {
       borderRadius: 12,
