@@ -16,7 +16,7 @@ export default function SidebarNavItem({
         <Box
             sx={{
                 width: "100%",
-                paddingX: "8px",
+                paddingX: "12px",
                 paddingY: "4px",
                 borderRadius: "8px",
                 "&:hover": {

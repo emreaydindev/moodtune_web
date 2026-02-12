@@ -7,6 +7,7 @@ import OpenSidebarIcon from '@mui/icons-material/LastPage';
 import { usePathname } from 'next/navigation';
 import { useEffect, useRef, useState } from "react";
 import { MENU_ITEMS } from "../utilities/MenuUtilities";
+import { RoundedSquareIconButton } from "./RoundedSquareIconButton";
 
 export default function Sidebar() {
 
@@ -71,19 +72,11 @@ export default function Sidebar() {
                 >
                     <DashboardLogo sidebarOpen={sidebarOpen} />
                     <Box sx={{ flexGrow: 1 }}></Box>
-                    <IconButton
-                        sx={{
-                            border: (theme) => `1px solid ${theme.palette.divider}`,
-                            borderRadius: '8px',
-                            padding: 0.75,
-                            "& .MuiTouchRipple-root .MuiTouchRipple-child": {
-                                borderRadius: "8px"
-                            }
-                        }}
+                    <RoundedSquareIconButton
                         onClick={toggleSidebar}
                     >
                         {(sidebarOpen) ? <CloseSidebarIcon /> : <OpenSidebarIcon />}
-                    </IconButton>
+                    </RoundedSquareIconButton>
                 </Box>
 
                 <Divider sx={{
